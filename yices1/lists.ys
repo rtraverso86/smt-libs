@@ -1,0 +1,11 @@
+(define-type list (datatype nil (cons car::int cdr::list)))
+
+(define member::(-> int list bool) (lambda (e::int l::list)
+  (if (nil? l)
+    false
+    (if (= e (car l))
+      true
+      (member e (cdr l))
+    )
+  )
+))
